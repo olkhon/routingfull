@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {Switch, Route, NavLink} from 'react-router-dom';
 import axios from "axios";
 import "./styles.scss";
-import MyComponent from './components/MyComponent';
+import Results from './components/Results';
 import Students from './components/Students';
 
 const App = () => {
@@ -132,8 +132,10 @@ const App = () => {
 
         <div className="block">
 
+          <Route path="/results">
+            <Results />
+          </Route>
 
-          <MyComponent />
 
           <Route path="/students">
           <Students />
