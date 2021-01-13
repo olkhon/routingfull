@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import {Switch, Route, NavLink} from 'react-router-dom';
 import axios from "axios";
 import "./styles.scss";
 import MyComponent from './components/MyComponent';
+import Students from './components/Students';
 
 const App = () => {
   const [students, setStudents] = useState([]);
@@ -16,18 +18,25 @@ const App = () => {
     fetchStudents().then(res => setStudents(res));
   }, []);
 
+
   const subjects = ["React", "HTML", "CSS", "JS"];
 
   return (
     <div className="App">
+
       <nav>
-        <a className="link" href="#">
+        <NavLink activeStyle={{
+            background: "white"
+          }} className="link" to="/students">
           Students
-        </a>
-        <a className="link" href="#">
+        </NavLink>
+        <NavLink activeStyle={{
+            background: "white"
+          }} className="link" to="/results">
           Student Results
-        </a>
+        </NavLink>
       </nav>
+
       <div className="Instructions">
         <div className="block">
           For this exercise, you will have to:
@@ -122,7 +131,13 @@ const App = () => {
         </div>
 
         <div className="block">
+
+
           <MyComponent />
+
+          <Route path="/students">
+          <Students />
+          </Route>
         </div>
       </div>
     </div>
