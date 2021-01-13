@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <div className="App">
-
+      {console.log(students)}
       <nav>
         <NavLink activeStyle={{
             background: "white"
@@ -136,7 +136,19 @@ const App = () => {
         <div className="block">
 
           <Route path="/results">
-            <Results subjects={subjects}  /><br />
+
+            {
+              students.map( (student) => (
+                <Results student={student.name} subjects={subjects} />
+              ))
+            }
+
+
+
+
+
+
+
 
 
           </Route>

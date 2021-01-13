@@ -1,27 +1,29 @@
 import React from 'react';
 import './styles.css';
 
-export default function Results ({subjects}) {
+export default function Results (
+  {subjects,
+    student
+  })
+   {
 
 
 
     return (
         <div>
-            <table id="grades">
-  <tr>
-    <th>Subjects</th>
-    <th>Grades</th>
-  </tr>
-  <tr>
+         <table border = "2">
+	<tbody>
+		<tr>
+			<td> </td>
+			<td> </td>
+			<td> </td>
 
-    <td>{subjects.map(subject => (
-        <ul>{subject}</ul>
-      ))}</td>
+		</tr>
 
-  </tr>
-
-
+	</tbody>
 </table>
+
+
         </div>
     )
 }
