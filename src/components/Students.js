@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-export default function Students () {
+export default function Students ({name}) {
     return (
-        <div>test</div>
+        <div>{name}</div>
     )
 }

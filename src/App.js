@@ -131,14 +131,20 @@ const App = () => {
         </div>
 
         <div className="block">
-
+              {console.log(students)}
           <Route path="/results">
-            <Results />
+            <Results  />
           </Route>
 
 
           <Route path="/students">
-          <Students />
+          {
+            students.map((student) => (
+              <Students name={student.name} />
+            ))
+          }
+
+
           </Route>
         </div>
       </div>
