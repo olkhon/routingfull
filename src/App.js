@@ -21,9 +21,7 @@ const App = () => {
 
   const subjects = ["React", "HTML", "CSS", "JS"];
 
-  const handleClick = (id) => {
-    alert(id);
-  }
+
 
   return (
     <div className="App">
@@ -136,6 +134,7 @@ const App = () => {
 
         <div className="block">
 
+          <Switch>
           <Route path="/results">
 
             {
@@ -158,12 +157,17 @@ const App = () => {
           <Route path="/students/">
           {
             students.map((student) => (
-              <Students name={student.name} id={student.id} handleClick={handleClick} />
+              <Students name={student.name} id={student.id}  />
             ))
           }
+          </Route>
+        <Route path="/students/:id">
 
+
+              <Students  />
 
           </Route>
+          </Switch>
         </div>
       </div>
     </div>

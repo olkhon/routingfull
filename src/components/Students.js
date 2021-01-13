@@ -1,11 +1,10 @@
 import React from 'react';
-import {Switch, Route, NavLink, Redirect, Link} from 'react-router-dom';
+import {Switch, Route, NavLink, Redirect, Link, useParams} from 'react-router-dom';
 
 
 export default function Students ({
     name,
     id,
-    handleClick
 }) {
 
 
@@ -13,7 +12,7 @@ export default function Students ({
 
     return (
         <div>
-        <span onClick={(e) => {handleClick (id)}}>{name}</span>
+        <Link to={`/student/${id}`}>{name}</Link>
 
         </div>
 
