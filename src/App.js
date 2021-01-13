@@ -20,7 +20,7 @@ const App = () => {
 
 
   const subjects = ["React", "HTML", "CSS", "JS"];
-
+  const grades =['2', '3', '2', '1'];
 
 
   return (
@@ -139,7 +139,7 @@ const App = () => {
 
             {
               students.map( (student) => (
-                <Results student={student.name} subjects={subjects} />
+                <Results student={student.name} subjects={subjects} grades={grades} />
               ))
             }
 

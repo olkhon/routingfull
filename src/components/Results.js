@@ -3,7 +3,8 @@ import './styles.css';
 
 export default function Results (
   {subjects,
-    student
+    student,
+    grades
   })
    {
 
@@ -11,17 +12,20 @@ export default function Results (
 
     return (
         <div>
-         <table border = "2">
-	<tbody>
-		<tr>
-			<td> </td>
-			<td> </td>
-			<td> </td>
+            {student}
+            <tr>
+              <td>{
+              subjects.map((subject) => (
+                <ul>{subject}</ul>
+              ))
+            }</td>
+              <td> {
+              grades.map((grade) => (
+                <ul>{grade}</ul>
+              ))
+            }</td>
+            </tr>
 
-		</tr>
-
-	</tbody>
-</table>
 
 
         </div>
