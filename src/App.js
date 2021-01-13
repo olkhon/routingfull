@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./styles.scss";
+import MyComponent from './components/MyComponent';
 
 const App = () => {
   const [students, setStudents] = useState([]);
@@ -121,7 +122,7 @@ const App = () => {
         </div>
 
         <div className="block">
-          <em>Code here!</em>
+          <MyComponent />
         </div>
       </div>
     </div>
