@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Switch, Route, NavLink} from 'react-router-dom';
+import {Switch, Route, NavLink, Redirect} from 'react-router-dom';
 import axios from "axios";
 import "./styles.scss";
 import Results from './components/Results';
@@ -20,6 +20,9 @@ const App = () => {
 
 
   const subjects = ["React", "HTML", "CSS", "JS"];
+
+
+
 
   return (
     <div className="App">
@@ -131,13 +134,15 @@ const App = () => {
         </div>
 
         <div className="block">
-              {console.log(students)}
+
           <Route path="/results">
-            <Results  />
+            <Results subjects={subjects}  /><br />
+
+
           </Route>
 
 
-          <Route path="/students">
+          <Route path="/students/">
           {
             students.map((student) => (
               <Students name={student.name} />
