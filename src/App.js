@@ -21,8 +21,9 @@ const App = () => {
 
   const subjects = ["React", "HTML", "CSS", "JS"];
 
-
-
+  const handleClick = (id) => {
+    alert(id);
+  }
 
   return (
     <div className="App">
@@ -157,7 +158,7 @@ const App = () => {
           <Route path="/students/">
           {
             students.map((student) => (
-              <Students name={student.name} />
+              <Students name={student.name} id={student.id} handleClick={handleClick} />
             ))
           }
 
